@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Gentelella Alela! | </title>
+    <title> Login Pakar | Sistem Pakar Penyakit Dermatitis </title>
     
     <!-- Bootstrap -->
     <link href="{{asset('assets/pakar/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
