@@ -9,12 +9,12 @@ use App\Gejala;
 class SymptomsController extends Controller
 {
     public function index(){
-        $data['gejala'] = Gejala::all();
+        $data['gejala'] = Gejala::orderBy('kode_gejala', 'asc')->get();
         return view('pakar.pages.symptoms.index', $data);
     }
 
     public function create(){
-        $gejala = Gejala::all(); 
+        $gejala = Gejala::orderBy('kode_gejala', 'asc')->get(); 
         $total_gejala = $gejala->count(); 
         if ($total_gejala <= 0) {
             $kode_baru = 'G001';

@@ -10,13 +10,13 @@ class DiseaseController extends Controller
 {
     //
     public function index(){
-        $data['penyakit'] = Penyakit::all();
+        $data['penyakit'] = Penyakit::orderBy('kode_penyakit', 'asc')->get();
         return view('pakar.pages.disease.index', $data);
     }
     
     public function detail($kode){
 
-        $data['penyakit'] = Penyakit::where('kode_penyakit', $kode)->get()->last();
+        $data['penyakit'] = Penyakit::where('kode_penyakit', $kode)->orderBy('kode_penyakit', 'asc')->get()->last();
         if($data['penyakit'] == null){
             $alert = [
                 "type" => "alert-warning",
