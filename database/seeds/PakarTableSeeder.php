@@ -14,7 +14,7 @@ class PakarTableSeeder extends Seeder
     {
         Pakar::create([
             "nama"  => "Owen Wattimena",
-            "username" => "wentox_wtt",
+            "username" => "pakar",
             "password" => Hash::make("1234567890")
         ]);
     }
