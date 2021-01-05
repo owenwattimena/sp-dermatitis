@@ -22,6 +22,13 @@ class ConsultationController extends Controller
     }
 
     public function diagnosis(Request $request){
+        if(count($request->all()) <= 1){
+            $alert = [
+                "type" => "alert-danger",
+                "msg"  => "Mohon pilih gejala!"
+            ];
+            return redirect()->route('consultation')->with($alert);
+        }
         $data = [];
         $gejala_pasien = $request->except('_token');
         if($gejala_pasien){

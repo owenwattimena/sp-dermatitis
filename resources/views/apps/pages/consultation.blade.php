@@ -11,6 +11,14 @@
                 </p>
             </div>
             <div class="col-md-6 order-md-1">
+                @if (session('msg'))
+                <div class="alert {!! session('type') !!} alert-dismissible fade show" role="alert">
+                    {!! session('msg') !!}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
                 <h1 class="display-5 text-primary text-center text-md-left">Konsultasi!
                 </h1>
                 
