@@ -5,7 +5,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-md-6 order-md-2 pb-5 text-center">
-                <img class="mx-auto d-block" width="500" src="{{asset('assets/apps/images/doctor.png')}}" alt="stop-covid">
+                <img class="w-100" src="{{asset('assets/apps/images/doctor.png')}}" alt="stop-covid">
                 <p class="lead">Halo {{Auth::user()->nama}}, apakah anda sedang mengalami hal-hal
                     berikut?
                 </p>
