@@ -22,6 +22,7 @@ class ConsultationController extends Controller
     }
 
     public function diagnosis(Request $request){
+        // Cek apakah adata gejala yang telah dipilih
         if(count($request->all()) <= 1){
             $alert = [
                 "type" => "alert-danger",
@@ -29,6 +30,8 @@ class ConsultationController extends Controller
             ];
             return redirect()->route('consultation')->with($alert);
         }
+        
+
         $data = [];
         $gejala_pasien = $request->except('_token');
         if($gejala_pasien){
@@ -63,6 +66,15 @@ class ConsultationController extends Controller
                     }
                 }
             }
+
+            // Cek ketersediaan nilai rules
+            if(!isset($data['rules'])){
+                $alert = [
+                    "type" => "alert-danger",
+                    "msg"  => "Mohon maaf. untuk saat ini sistem belum bisa melakukan diagnosa!"
+                ];
+                return redirect()->route('consultation')->with($alert);
+            } 
             // dd($data['rules']);
             // cf
             foreach ($data['rules'] as $rule_key => $rule_value) {

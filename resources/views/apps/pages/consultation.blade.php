@@ -24,10 +24,11 @@
                 
                 <form action="{{route('diagnosis')}}" class="radio-toolbar" method="POST">
                     @csrf                    
-                    <div class="card shadow-sm border-0">
+                    @forelse ($gejala as $data)
+                    <div class="card shadow-sm border-0 mb-3">
                         <div class="card-body">
-                            @forelse ($gejala as $data)
-                            <p>{{$data->nama_gejala}}?</p>
+                            <p class="mb-0">{{$data->nama_gejala}}?</p>
+                            <p class="text-success"><small>{{$data->keterangan}}?</small></p>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
                                 id="tidak{{$data->kode_gejala}}" value="0.2">
@@ -56,17 +57,19 @@
                                     Sangat Yakin
                                 </label>
                             </div>
-                            <hr class="my-1">
-                            @empty
-                            
-                            @endforelse
+                            {{-- <hr class="my-1"> --}}
                         </div>
                     </div>
+                    @empty
+                    <p class="text-left text-danger"> Balum ada data gejala. </p>
+                    @endforelse
                     
                     
                     <div class="row justify-content-center">
                         <div class="col-12">
+                            @if (count($gejala) > 0)
                             <button class="btn btn-success mt-3 btn-block" type="submit">DIAGNOSA</button>
+                            @endif 
                         </div>
                     </div>
                 </form>
