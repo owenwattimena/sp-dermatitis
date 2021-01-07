@@ -12,8 +12,7 @@
       </div> --}}
       
       <div class="col-md-12 order-md-1">
-        <h1 class="display-6 text-primary text-center text-md-left mb-4">Daftar Penyakit!
-        </h1>
+        <h1 class="display-6 text-primary text-center text-md-left mb-4">Tentang Dermatitis</h1>
         <div class="accordion" id="accordionExample">
           @foreach ($penyakit as $data)
           
