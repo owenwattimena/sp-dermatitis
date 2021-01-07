@@ -55,7 +55,7 @@ class AuthController extends Controller
                 # code...
                 \Auth::guard('expert')->login($pakar);
                 \Auth::loginUsingId($pakar->id);
-                return redirect('pakar');
+                return redirect('expert');
             }
         }
         return redirect()->back()->with('msg', '<b>Login gagal</b>.</br>Masukan username dan password yang benar!');
