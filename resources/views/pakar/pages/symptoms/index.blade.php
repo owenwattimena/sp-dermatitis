@@ -1,4 +1,9 @@
 @extends('pakar.templates.layout')
+@section('style')
+    <!-- Data Table -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link href="{{asset('assets/pakar/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+@endsection
 @section('content')
 <div class="col-md-12 col-sm-12 ">
     <div class="x_panel">
@@ -59,4 +64,10 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')
+    <!-- Datatables -->
+    <script src="{{asset('assets/pakar/vendors/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/pakar/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/pakar/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js')}}"></script>
 @endsection
