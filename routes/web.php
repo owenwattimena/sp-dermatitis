@@ -79,7 +79,7 @@ Route::group(['middleware' => ['auth:expert']], function () {
         return redirect('/');
     })->name('auth_logout');
     
-    Route::group(['prefix' => 'pakar'], function () {
+    Route::group(['prefix' => 'expert'], function () {
         
         Route::get('/', 'Pakar\DashboardController@index')->name('dashboard');
         
