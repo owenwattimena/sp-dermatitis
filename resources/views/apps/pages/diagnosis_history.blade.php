@@ -14,6 +14,7 @@
                 </h1>
                 <div class="card shadow-sm border-0">
                     <div class="card-body">
+                      <div class="table-responsive">
                         <table class="table">
                             <thead>
                               <tr>
@@ -37,6 +38,7 @@
                               @endforelse
                             </tbody>
                           </table>
+                        </div>
                     </div>
                 </div>
             </div>
