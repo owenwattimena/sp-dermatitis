@@ -40,7 +40,7 @@
                                     <td>{{$data->nama_gejala}}</td>
                                     <td>{{$data->keterangan}}</td>
                                     <td class="text-center">
-                                        <a href="{{url('pakar/symptoms/edit')}}/{{$data->kode_gejala}}" class="btn btn-sm btn-warning">Ubah</a>
+                                        <a href="{{url('expert/symptoms/edit')}}/{{$data->kode_gejala}}" class="btn btn-sm btn-warning">Ubah</a>
                                         <form class="d-inline" action="{{route('symptoms_delete', $data->kode_gejala)}}" method="POST">
                                             @method('delete')
                                             @csrf

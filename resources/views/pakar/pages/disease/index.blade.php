@@ -35,8 +35,8 @@
                                     <td>{{$data->kode_penyakit}}</td>
                                     <td>{{$data->nama_penyakit}}</td>
                                     <td class="text-center">
-                                    <a href="{{url('pakar/disease/detail')}}/{{$data->kode_penyakit}}" class="btn btn-success btn-sm">Detail</a>
-                                        <a href="{{url('pakar/disease/edit')}}/{{$data->kode_penyakit}}" class="btn btn-sm btn-warning">Ubah</a>
+                                    <a href="{{url('expert/disease/detail')}}/{{$data->kode_penyakit}}" class="btn btn-success btn-sm">Detail</a>
+                                        <a href="{{url('expert/disease/edit')}}/{{$data->kode_penyakit}}" class="btn btn-sm btn-warning">Ubah</a>
                                         <form class="d-inline" action="{{route('disease_delete', $data->kode_penyakit)}}" method="POST">
                                             @method('delete')
                                             @csrf

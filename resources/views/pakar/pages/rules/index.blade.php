@@ -40,7 +40,7 @@
                                     <td>{{$data->gejala->nama_gejala}}</td>
                                     <td>{{$data->bobot_pakar}}</td>
                                     <td class="text-center">
-                                        <a href="{{url('pakar/rule/edit')}}/{{$data->id}}" class="btn btn-sm btn-warning">Ubah</a>
+                                        <a href="{{url('expert/rule/edit')}}/{{$data->id}}" class="btn btn-sm btn-warning">Ubah</a>
                                         <form class="d-inline" action="{{route('rule_delete', $data->id)}}" method="POST">
                                             @method('delete')
                                             @csrf
