@@ -44,7 +44,7 @@
                                     <td>{{$data->tempat_lahir}}, {{$data->tanggal_lahir}}</td>
                                     <td>{{($data->jenis_kelamin == 'l') ? 'Laki-laki' : 'perempuan'}}</td>
                                     <td class="text-center">
-                                        <a href="{{url('pakar/user/detail')}}/{{$data->id}}" class="btn btn-sm btn-success">Lihat</a>
+                                        <a href="{{url('expert/user/detail')}}/{{$data->id}}" class="btn btn-sm btn-success">Lihat</a>
                                     </td>
                                 </tr>    
                                 @endforeach
