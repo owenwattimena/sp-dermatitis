@@ -75,6 +75,7 @@
                             </form>
                         </div>
                     </div>
+                    {{-- PASSWORD --}}
                     <div class="card mt-3">
                         <div class="card-body shadow-sm text-primary">
                             <h4 class="text-center font-main">Ubah Password</h4>
@@ -108,9 +109,54 @@
                             </form>
                         </div>
                     </div>
+
+                    {{-- DELETE PROFILE --}}
+                    <div class="card mt-3">
+                        <div class="card-body text-danger">
+                            <div class="text-center">
+                                <h4 class="text-center font-main mb-0">Hapus Akun</h4>
+                                <small>Hapus akun Anda secara permanen.</small>
+                                <p class="text-dark mt-3 text-left">
+                                    Setelah akun Anda dihapus, semua sumber daya dan datanya akan dihapus secara permanen. Sebelum menghapus akun Anda, harap unduh data atau informasi apa pun yang ingin Anda simpan.
+                                </p>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" type="button">HAPUS AKUN</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="{{ route('user_delete') }}" method="post" class="needs-validation" novalidate>
+                @csrf                    
+                @method('delete')
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">HAPUS AKUN</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Anda yakin ingin menghapus akun Anda? Setelah akun Anda dihapus, semua sumber daya dan datanya akan dihapus secara permanen. Silakan masukkan kata sandi Anda untuk mengonfirmasi bahwa Anda ingin menghapus akun Anda secara permanen.
+                        <div class="form-group mt-4">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            <div class="invalid-feedback">
+                                Harap masukan password anda.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">BATAL</button>
+                        <button type="submit" class="btn btn-danger">HAPUS AKUN</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     @endsection

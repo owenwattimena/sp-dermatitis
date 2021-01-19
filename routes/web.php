@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/diagnosis-history', 'App\ConsultationController@consultation_history')->name('diagnosis_history');
     Route::get('/profile', 'App\UserController@index')->name('user_profile');
     Route::put('/profile', 'App\UserController@profile')->name('user_profile_put');
+    Route::delete('/profile', 'App\UserController@delete')->name('user_delete');
     Route::put('/password', 'App\UserController@password')->name('user_password');
     Route::get('/logout', function(){
         \Auth::logout();

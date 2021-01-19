@@ -31,30 +31,37 @@
                             <p class="text-success"><small>{{$data->keterangan}}?</small></p>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
-                                id="tidak{{$data->kode_gejala}}" value="0.2">
-                                <label class="form-check-label" for="tidak{{$data->kode_gejala}}">
-                                    Tidak Yakin
+                                id="ragu{{$data->kode_gejala}}" value="0.2">
+                                <label class="form-check-label" for="ragu{{$data->kode_gejala}}">
+                                    Ragu-ragu
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
                                 id="mungkin{{$data->kode_gejala}}" value="0.4">
                                 <label class="form-check-label" for="mungkin{{$data->kode_gejala}}">
-                                    Cukup Yakin
+                                    Mungkin
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
-                                id="yakin{{$data->kode_gejala}}" value="0.6">
-                                <label class="form-check-label" for="yakin{{$data->kode_gejala}}">
-                                    Yakin
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
-                                id="sangat{{$data->kode_gejala}}" value="0.8">
+                                id="sangat{{$data->kode_gejala}}" value="0.6">
                                 <label class="form-check-label" for="sangat{{$data->kode_gejala}}">
-                                    Sangat Yakin
+                                    Sangat Mungkin
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
+                                id="hampir{{$data->kode_gejala}}" value="0.8">
+                                <label class="form-check-label" for="hampir{{$data->kode_gejala}}">
+                                    Hampir Pasti
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="{{$data->kode_gejala}}"
+                                id="pasti{{$data->kode_gejala}}" value="1.0">
+                                <label class="form-check-label" for="pasti{{$data->kode_gejala}}">
+                                    Pasti
                                 </label>
                             </div>
                             {{-- <hr class="my-1"> --}}

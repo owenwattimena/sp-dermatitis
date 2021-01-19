@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
+use App\Diagnosa;
 
 class UserController extends Controller
 {
@@ -13,6 +14,7 @@ class UserController extends Controller
     public function index(){
         return view('apps.pages.profile');
     }
+
     public function profile(Request $request){
         if ($request) {
 
@@ -80,5 +82,35 @@ class UserController extends Controller
                 return redirect()->route('user_profile')->with($alert);
             }
         }
+    }
+
+    public function delete(Request $request){
+        $validatedData = $request->validate([
+            'password' => 'required',
+        ]);
+
+        
+        $user = User::findOrFail(\Auth::user()->id);
+
+        if (!Hash::check($request->password, $user->password)) {
+            # code...
+            $alert = [
+                "type" => "alert-danger",
+                "msg"  => "Password salah!"
+            ];
+            return redirect()->route('user_profile')->with($alert);
+        }
+
+        Diagnosa::where( 'id_user', \Auth::user()->id )->delete();
+        if($user->delete()){
+            \Auth::logout();
+            return redirect('/');
+        }
+        $alert = [
+            "type" => "alert-danger",
+            "msg"  => "Akun gagal di hapus!"
+        ];
+        return redirect()->route('user_profile')->with($alert);
+        dd($user);
     }
 }
