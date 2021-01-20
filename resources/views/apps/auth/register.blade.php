@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="tempat_lahir">Tempat lahir</label>
                                         <input type="text" class="form-control @error('tempat_lahir') is-invalid @enderror" id="tempat_lahir" value="{{old('tempat_lahir')}}" name="tempat_lahir" placeholder="Masukan tempat lahir anda" required>
@@ -82,7 +82,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="tanggal_lahir">Tanggal lahir</label>
                                         <input type="date" class="form-control @error('tanggal_lahir') is-invalid @enderror" id="tanggal_lahir" value="{{old('tanggal_lahir')}}" name="tanggal_lahir" aria-describedby="emailHelp" placeholder="Masukan tanggal lahir anda" required>
