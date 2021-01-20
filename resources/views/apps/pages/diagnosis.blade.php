@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-5 order-md-2 pb-5 text-center">
                 <img class="mx-auto d-block img-fluid" src="{{asset('assets/apps/images/diagnosa_result.png')}}" alt="stop-covid">
-                <p class="lead">Halo {{\Auth::user()->nama}}, Persentase kemungkinan anda terkena {{$nilai_akhir['penyakit']}} ialah {{ round($nilai_akhir['persentase'], 1) }}%</p>
+                <p class="lead">Halo {{\Auth::user()->nama}}, kemungkinan Dermatitis yang anda derita adalah {{$nilai_akhir['penyakit']}} dengan nilai keyakinan sebesar {{ $nilai_akhir['CF'] }}</p>
                 <a href="{{route('consultation')}}" class="btn btn-success px-5">Konsultasi Lagi</a>
             </div>
             <div class="col-md-7 order-md-1">
@@ -110,7 +110,7 @@
                             <div class="col-md-12">
                                 <p class="font-weight-bold">Hasil Diagnosa</p>
                                 <p class="text-center">
-                                    Jadi Penyakit dengan CF terbesar adalah <i class="h5">{{$nilai_akhir['penyakit']}} </i> dengan nilai sebesar <u class="h5">{{ round($nilai_akhir['persentase'], 1) }} %</u> 
+                                    Jadi Penyakit dengan CF terbesar adalah <i class="h5">{{$nilai_akhir['penyakit']}} </i> dengan nilai keyakinan sebesar <u class="h5">{{ $nilai_akhir['CF'] }} </u> 
                                 </p>
                             </div>
                         </div>
