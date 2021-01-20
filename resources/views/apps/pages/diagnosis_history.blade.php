@@ -21,7 +21,6 @@
                                 <th scope="col">TANGGAL</th>
                                 <th scope="col">PENYAKIT</th>
                                 <th scope="col">NILAI CF</th>
-                                <th scope="col">%</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -31,7 +30,6 @@
                                 <th scope="row">{{$data->tanggal}}</th>
                                 <td>{{$data->penyakit->nama_penyakit}}</td>
                                 <td>{{$data->nilai_cf}}</td>
-                                <td>{{$data->nilai_cf * 100}}</td>
                               </tr>
                               @empty
                                   
