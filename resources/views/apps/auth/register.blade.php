@@ -12,7 +12,7 @@
                         <form action="{{route('register_create')}}" method="POST" class="needs-validation" novalidate>
                             @csrf
                             <div class="row">
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="nama">Nama lengkap</label>
                                     <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{old('nama')}}" placeholder="Masukan nama lengkap anda" required>
@@ -26,7 +26,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{old('email')}}" name="email" aria-describedby="emailHelp" placeholder="Masukkan alamat email" required>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="password">Password</label>
                                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" placeholder="Masukan Password" required>
@@ -56,7 +56,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="password-confirm">Ulang password</label>
                                         <input type="password" class="form-control" id="password-confirm" name="password_confirmation" aria-describedby="emailHelp" placeholder="Ulangi password" required>
