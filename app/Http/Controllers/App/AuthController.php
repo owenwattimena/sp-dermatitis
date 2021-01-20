@@ -19,12 +19,19 @@ class AuthController extends Controller
                 \Auth::login($user);
                 \Auth::loginUsingId($user->id);
                 return redirect()->route('consultation_now');
+            }else{
+                $alert = [
+                    "type" => "alert-danger",
+                    "msg"  => "<b>Login gagal</b>.</br>Masukan username dan password yang benar!"
+                ];
             }
         }
-        $alert = [
-            "type" => "alert-danger",
-            "msg"  => "<b>Login gagal</b>.</br>Masukan username dan password yang benar!"
-        ];
+        else {
+            $alert = [
+                "type" => "alert-danger",
+                "msg"  => "<b>Login gagal</b>.</br>Email tidak terdaftar!"
+            ];
+        }
         return redirect()->back()->with($alert);
     }
 
@@ -36,11 +43,7 @@ class AuthController extends Controller
             $validatedData = $request->validate(['nama' => 'required','email' => 'required|unique:users','password' => 'required|confirmed', 'tempat_lahir'=>'required', 'tanggal_lahir'=>'required', 'jenis_kelamin' => 'required|max:1', 'alamat'=>'required']);
             
 
-            // if ($validatedData->fails()) {
-            //     return redirect()->back()
-            //                 ->withErrors($validator)
-            //                 ->withInput();
-            // }
+            
             
             $user = new User;
             $user->nama = $request->nama;

@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary btn-block mt-4">MASUK</button>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 mb-3">MASUK</button>
                             <small>Belum punya akun? <a href="{!!url('register')!!}">Daftar</a></small>
                             <a href="{!!url('/')!!}"><p class="text-center mt-2">&larr; Beranda.</p></a>
                         </form>

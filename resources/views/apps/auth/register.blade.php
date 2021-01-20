@@ -125,7 +125,7 @@
                                 @enderror
                             </div>
                             
-                            <button type="submit" class="btn btn-primary btn-block mt-4">DAFTAR</button>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 mb-3">DAFTAR</button>
                             <small>Sudah punya akun? <a href="{!!url('login')!!}">Masuk</a></small>
                             <a href="{!!url('/')!!}"><p class="text-center mt-2">&larr; Beranda.</p></a>
                         </form>
