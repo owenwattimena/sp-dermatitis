@@ -63,7 +63,6 @@
                                     <th>TANGGAL</th>
                                     <th>PENYAKIT</th>
                                     <th>NILAI CF</th>
-                                    <th>%</th>
                                     
                                 </tr>
                             </thead>
@@ -75,7 +74,6 @@
                                     <th scope="row">{{$data->tanggal}}</th>
                                 <td>{{$data->penyakit->nama_penyakit}}</td>
                                 <td>{{$data->nilai_cf}}</td>
-                                <td>{{$data->nilai_cf * 100}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
