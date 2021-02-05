@@ -20,7 +20,7 @@ class ExpertController extends Controller
                 'nama' => 'required',
             ]);
             # code...
-            $expert = Pakar::where('id', Auth::guard('expert')->user()->id)->get()->last();
+            $expert = Pakar::where('id', \Auth::guard('expert')->user()->id)->get()->last();
             $expert->nama = $request->nama;
             if ($expert->save()) {
                 # code...
